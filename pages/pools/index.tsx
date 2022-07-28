@@ -115,6 +115,7 @@ const Pools = () => {
         poolCount: data.pools.factories[0].poolCount,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   useEffect(() => {
