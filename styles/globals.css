@@ -1,26 +1,50 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #1e2129;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+table {
+  border-radius: 16px;
+  border-spacing: 0 !important;
 }
 
-* {
-  box-sizing: border-box;
+table th:first-child,
+thead {
+  border-top-left-radius: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+table th:last-child {
+  border-top-right-radius: 16px;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
+
+.loader {
+  transition-property: transform;
+  transition-duration: 1s;
+  animation-name: grow;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
   }
-  body {
-    color: white;
-    background: black;
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
